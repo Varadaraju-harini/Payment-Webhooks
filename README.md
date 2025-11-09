@@ -39,8 +39,19 @@ Expect HTTP 202 immediately.
 ## Test duplicate prevention
 Sending the same POST multiple times rapidly — you should receive 202 each time but only one processing job and only one final processed row (no duplicate processing).
 
-## Deployment
-- For cloud deployment use Railway, Render, Fly, or Heroku.
-- Ensure DATABASE_URL and REDIS_URL environment variables point to managed Postgres and Redis.
-- Run an RQ worker process (recommended managed container or separate process) for background processing.
+## Deployment - Punblic URL "https://payment-webhooks-aw02.onrender.com/"
+- For cloud deployment used Render, Fly, or Heroku.
+   - For checking APIs
+      - curl https://payment-webhooks-aw02.onrender.com/v1/transactions/txn_123 
+      - curl -X POST https://payment-webhooks-aw02.onrender.com/v1/webhooks/transactions \
+           -H "Content-Type: application/json" \
+           -d '{
+                 "transaction_id": "txn_123",
+                 "source_account": "A1",
+                 "destination_account": "B1",
+                 "amount": 100.5,
+                 "currency": "USD"
+               }'
+     - curl https://payment-webhooks-aw02.onrender.com/
+
 
