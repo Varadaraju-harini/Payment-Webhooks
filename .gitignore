@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+
+# Virtual environment
+venv/
+ENV/
+env/
+.env/*
+
+# Byte-compiled / logs / cache
+*.log
+*.sqlite3
+
+# IDE / Editor files
+.vscode/
+.idea/
+.DS_Store
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Bundler / Ruby
+*/.bundle/
+vendor/bundle/
+
+# Cache directories
+.cache/
+*/.cargo/
+tmp/
